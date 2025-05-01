@@ -1,68 +1,192 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #2b1537;
+  color: #e3cfee;
+}
+
+/* NavBar */
+
+.navbar {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 4rem;
+  background-color: rgba(43, 21, 55, 0.688);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  box-shadow: none;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.navbar.hidden {
+  transform: translateY(-100%);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.navbar.visible {
+  transform: translateY(0);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.navbar.with-shadow {
+  box-shadow: 1px 14px 32px -10px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 1px 14px 32px -10px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 1px 14px 32px -10px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+  height: 30px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #e3cfee;
+  font-family: "Fira Mono", serif;
+  font-size: 13px;
+}
+
+.nav-links span {
+  color: #d485ff;
+}
+
+.button {
+  border: 1.5px solid #d485ff;
+  background-color: #2b1537;
+  color: #d485ff;
+  border-radius: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  padding: 10px 15px;
+}
+
+/* Main */
+
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  max-width: 70%;
+  text-align: justify;
+  font-family: "Inter", sans-serif;
+  margin-left: -300px;
+}
+
+.main h1 {
+  color: #e3cfee;
+  font-size: 60px;
+  font-weight: 800;
+}
+
+.main h2,
+h5 {
+  color: #e3cfeead;
+  font-size: 54px;
+  font-weight: 700;
+}
+
+.main h5 {
+  font-size: 17px;
+  font-weight: 300;
+  max-width: 580px;
+  text-align: left;
+  margin-top: 17px;
+}
+
+.main h5 a {
+  color: #d485ff;
+}
+
+.main h3 {
+  font-family: "Fira Mono", serif;
+  color: #d485ff;
+  font-size: 19px;
+  font-weight: 300;
+  margin-bottom: 17px;
+}
+
+/* Social bar esq */
+.social-bar {
+  position: fixed;
+  bottom: 0;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.social-bar a {
+  color: #e3cfeead;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-bar a:hover {
+  color: #d485ff;
+}
+
+.social-bar .line {
+  width: 1px;
+  height: 80px;
+  background-color: #94a3b8;
+  margin-top: 10px;
+}
+
+/* social bar dir */
+.email-bar {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+.email-bar a {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  color: #94a3b8;
+  font-size: 12px;
+  font-family: "Fira Mono", serif;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.email-bar a:hover {
+  color: #d485ff;
+}
+
+.email-bar .line {
+  width: 1px;
+  height: 80px;
+  background-color: #94a3b8;
+  margin-top: 10px;
 }
