@@ -32,6 +32,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuOpen]);
+
   return (
     <nav
       className={`navbar ${showNavbar ? "visible" : "hidden"} ${
@@ -43,9 +50,9 @@ const Navbar = () => {
       <div className="nav-desktop">
         <ul className="nav-links">
           <li>
-            <Link to="/">
+            <a href="#about" className="nav-link">
               <span>01. </span>About
-            </Link>
+            </a>
           </li>
           <li>
             <Link to="/">
@@ -72,15 +79,22 @@ const Navbar = () => {
         <TbMenuDeep size={30} color="#d485ff" />
       </div>
 
+      {menuOpen && (
+        <div
+          className="mobile-overlay"
+          onClick={() => setMenuOpen(false)}
+        ></div>
+      )}
+
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
         <div className="close-icon" onClick={() => setMenuOpen(false)}>
           <X size={28} color="#fff" />
         </div>
         <ul>
           <li onClick={() => setMenuOpen(false)}>
-            <Link to="/">
+            <a href="#about" className="nav-link">
               <span>01. </span>About
-            </Link>
+            </a>
           </li>
           <li onClick={() => setMenuOpen(false)}>
             <Link to="/">

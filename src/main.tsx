@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import Navbar from "./components/NavBar";
 import SocialBar from "./components/SocialBar";
+import About from "./components/About";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -12,6 +13,7 @@ createRoot(document.getElementById("root")!).render(
       <Navbar />
       <SocialBar />
       <App />
+      <About />
     </BrowserRouter>
   </StrictMode>
 );
