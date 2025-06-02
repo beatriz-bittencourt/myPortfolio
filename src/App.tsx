@@ -1,6 +1,31 @@
+import { useState, useEffect } from "react";
+
 function App() {
+  const [showPreloader, setShowPreloader] = useState(true);
+  const [slide, setSlide] = useState(false);
+
+  useEffect(() => {
+    const toPurple = setTimeout(() => {
+      setSlide(true);
+    }, 3000);
+
+    const hidePreloader = setTimeout(() => {
+      setShowPreloader(false);
+    }, 4000);
+
+    return () => {
+      clearTimeout(toPurple);
+      clearTimeout(hidePreloader);
+    };
+  }, []);
+
   return (
     <>
+      {showPreloader && (
+        <div id="preloader" className={slide ? "slide-up" : ""}>
+          <img src="/logo.png" className="logoG" />
+        </div>
+      )}
       <div className="main-wrapper">
         <div className="main">
           <h3>Hi, my name is</h3>
