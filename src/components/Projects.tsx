@@ -1,6 +1,6 @@
 import ViaCruzeiro from "../assets/via_crz.png";
 import Birdhouse from "../assets/birdhouse.png";
-import NextScene from "../assets/NextScene.png";
+import NextScene from "../assets/nextscene.png";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { GrCircleQuestion } from "react-icons/gr";
 import { useState } from "react";
