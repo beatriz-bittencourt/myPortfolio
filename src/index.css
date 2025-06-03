@@ -507,12 +507,56 @@ h5 {
     padding-right: 20%;
     padding-left: 10%;
   }
+
+  .project-image {
+    width: 400px;
+  }
+
+  .main-project {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 15%;
+  }
+
+  .description-section,
+  .description-section.right {
+    max-width: 490px;
+  }
+
+  .project-card {
+    margin-right: 3%;
+  }
+
+  .project-card.reverse {
+    margin-left: 3%;
+  }
 }
 
 @media (max-width: 1054px) {
   .box {
     margin-left: -120px;
     gap: 2rem;
+  }
+  .project-card,
+  .project-card.reverse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .description-section,
+  .description-section.right {
+    margin: -17% 0 10% 0;
+  }
+
+  .my-projects {
+    text-align: center;
+  }
+
+  .main-project {
+    margin-left: 27%;
   }
 }
 
@@ -531,6 +575,12 @@ h5 {
 
   .photo img {
     box-shadow: 0 10px 25px rgba(212, 133, 255, 0.337);
+  }
+
+  .main-project {
+    margin-top: 100%;
+    margin-left: auto;
+    display: flex;
   }
 }
 
@@ -563,6 +613,20 @@ h5 {
     height: 100vh;
     margin-bottom: 50%;
   }
+
+  .project-image {
+    width: 300px;
+  }
+
+  .description-section,
+  .description-section.right {
+    min-width: 300px;
+  }
+
+  .project-card,
+  .project-card.reverse {
+    max-width: 400px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -581,10 +645,10 @@ h5 {
   .main h3 {
     font-size: 14px;
   }
+
   .box {
     display: block;
     margin-left: -20px;
-
     padding-right: 20%;
   }
 
@@ -595,12 +659,61 @@ h5 {
   .tech-stack {
     gap: 2rem;
   }
+
+  .main-project {
+    margin-left: 18%;
+  }
+
+  .my-projects {
+    text-align: left;
+    margin-left: -8%;
+  }
+
+  .project-image {
+    width: 250px;
+  }
+
+  .description-section,
+  .description-section.right {
+    width: 380px;
+  }
+
+  .project-card,
+  .project-card.reverse {
+    max-width: 350px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 525px) {
+  .main-project {
+    margin-left: 15%;
+    margin-top: 200%;
+  }
+
+  .description-section,
+  .description-section.right {
+    width: 100px;
+  }
+
+  .tech-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    list-style: none;
+  }
 }
 
 @media (max-width: 470px) {
   .main-wrapper {
     height: 100vh;
     margin-bottom: 50%;
+  }
+
+  .main-project {
+    margin-top: 300%;
+    margin-left: 17%;
+    max-width: 300px;
   }
 }
 
@@ -621,6 +734,27 @@ h5 {
   .email-bar {
     display: none;
   }
+
+  .main-project {
+    margin-left: 12%;
+    margin-top: 300%;
+  }
+
+  .project-image {
+    width: 210px;
+  }
+
+  .description-section,
+  .description-section.right {
+    min-width: 250px;
+    padding-bottom: 10%;
+  }
+
+  .my-projects {
+    max-width: 300px;
+    margin-left: 10%;
+    margin-top: 100%;
+  }
 }
 
 /* */
@@ -634,7 +768,6 @@ h5 {
 
   .about {
     max-width: 560px;
-    margin-left: 3rem;
   }
 
   .social-bar,

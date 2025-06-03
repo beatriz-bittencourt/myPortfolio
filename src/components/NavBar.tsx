@@ -61,12 +61,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/">
-              <span>03. </span>Experience
-            </Link>
-          </li>
-          <li>
-            <Link to="/">
-              <span>04. </span>Contact
+              <span>03. </span>Contact
             </Link>
           </li>
           <li>
@@ -97,18 +92,13 @@ const Navbar = () => {
             </a>
           </li>
           <li onClick={() => setMenuOpen(false)}>
-            <Link to="/">
+            <a href="#projects" className="nav-link">
               <span>02. </span>Projects
-            </Link>
+            </a>
           </li>
           <li onClick={() => setMenuOpen(false)}>
             <Link to="/">
-              <span>03. </span>Experience
-            </Link>
-          </li>
-          <li onClick={() => setMenuOpen(false)}>
-            <Link to="/">
-              <span>04. </span>Contact
+              <span>03. </span>Contact
             </Link>
           </li>
           <li>

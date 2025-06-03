@@ -58,8 +58,8 @@ const Projects = () => {
   ];
 
   return (
-    <div className="main-wrapper" id="projects">
-      <div className="main-project">
+    <div className="main-wrapper">
+      <div className="main-project" id="projects">
         <div className="my-projects">
           <h1>
             <span>02.</span> Some projects I've built
